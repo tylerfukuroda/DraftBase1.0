@@ -12,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Players")
 public class Player implements Serializable{
 	
 
@@ -20,7 +19,6 @@ public class Player implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "playerId", nullable = true)
 	private long id;
 	
 	@Column
