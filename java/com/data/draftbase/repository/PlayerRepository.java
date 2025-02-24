@@ -12,15 +12,9 @@ import com.data.draftbase.entity.Player;
 public interface PlayerRepository extends JpaRepository<Player, Long>{
 	
 	List<Player> findAll();
-	
-	@Query("Select p FROM Player p Where p.id = :id")
-	Optional<Player> findPlayerById(@Param("id") Long id);
-	
-	@Query("Select p FROM Player p Where p.firstName = :firstName")
-	Optional<Player> findPlayerByFirstName(@Param("firstName") String firstName);
-	
-	@Query("Select p FROM Player p Where p.lastName = :lastName")
-	Optional<Player> findPlayerByLastName(@Param("lastName") String lastName);
+	Optional<Player> findPlayerById(Long id);
+	Optional<Player> findPlayerByFirstName(String firstName);
+	Optional<Player> findPlayerByLastName(String lastName);
 	
 	
 }
