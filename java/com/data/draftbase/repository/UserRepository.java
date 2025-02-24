@@ -11,20 +11,11 @@ import com.data.draftbase.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 	
-	@Query("Select u from User u Where u.id = :id")
-	Optional<User> findUserById(@Param("id") Long id);
-	
-	@Query("Select u from User u Where u.firstName = :firstName")
-	Optional<User> findUserByFirstName(@Param("firstName") String firstName);
-	
-	@Query("Select u from User u Where u.lastName = :lastName")
-	Optional<User> findUserByLastName(@Param("lastName") String lastName);
-	
-	@Query("Select u from User u where u.username = :username")
-	Optional<User> findUserByUsername(@Param("username") String username);
-	
-	@Query("Select u from User u where u.email = :email")
-	Optional<User> findUserByEmail(@Param("email") String email);
+	Optional<User> findUserById(Long id);
+	Optional<User> findUserByFirstName(String firstName);
+	Optional<User> findUserByLastName(String lastName);
+	Optional<User> findUserByUsername(String username);
+	Optional<User> findUserByEmail(String email);
 	
 	
 }
