@@ -11,12 +11,8 @@ import com.data.draftbase.entity.Report;
 
 public interface ReportRepository extends JpaRepository<Report, Long>{
 	
-	@Query("Select r From Report r Where r.userId = :userId")
-	public List<Report> findByUserId(@Param("userId") Long userId);
-	
-	@Query("Select r From Report r Where r.id = :id")
-	public Optional<Report> findByReportId(@Param("id") Long id);
-	
-	@Query("Select r From Report r Where r.playerId = :playerId")
-	public List<Report> findByPlayerId(@Param("playerId")Long playerId);
+
+	public List<Report> findByUserId(Long userId);
+	public Optional<Report> findByReportId(Long id);
+	public List<Report> findByPlayerId(Long playerId);
 }
